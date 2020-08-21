@@ -37,7 +37,7 @@ export const isImage = (entity: S3.Object): boolean => {
     fp.split('.'),
     fp.last
   )(entity)
-  return _.includes(['gif', 'jpeg', 'jpg', 'png', 'webp'], extension)
+  return _.includes(['gif', 'GIF', 'jpeg','JPEG', 'jpg', 'JPG', 'png', 'PNG', 'webp', 'WEBP'], extension)
 }
 
 export const getEntityNodeFields = ({
