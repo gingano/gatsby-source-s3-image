@@ -84,6 +84,8 @@ export const constructS3UrlForAsset = ({
   key: string
   protocol?: string
 }): string => {
+  key.replace(/\s/g, '%20')
+  key.replace(/ /g, '%20')
   // Both `key` and either one of `bucketName` or `domain` are required.
   const areParamsValid = key && (bucketName || domain)
   if (!areParamsValid) {
